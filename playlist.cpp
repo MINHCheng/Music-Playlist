@@ -34,7 +34,7 @@ string Playlist::add(string t_a)
     } 
 
     // loops through all songs in array to see if it already added to the playlist
-    for (unsigned int i = 0; i < this->size; i++)
+    for (int i = 0; i < this->size; i++)
     {
         if (*(this->arr + i) == newSong) // obtaining song within the array using pointer syntax and check if it is equal to the current song
         {
