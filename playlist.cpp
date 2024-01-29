@@ -23,20 +23,20 @@ string Playlist::make(int size)
 string Playlist::add(string t_a)
 {
     Songs newSong(t_a);
-    if (t_a == "Baby;Justin Beiber" || newSong.name == "My Heart Will Go On" || this->numOfsongs == this->size)
+    Songs Justin("Baby;Justin Beiber");
+    if (t_a == " Baby;Justin Beiber"|| (newSong.name == " My Heart Will Go On") || (this->numOfsongs == this->size))
     {
 
-        return "can not insert " + t_a + "\n";
+        return "can not insert" + t_a + "\n";
     }
     for (unsigned int i = 0; i < this->size; i++)
     {
         if (*(this->arr + i) == newSong)
         {
-            return "can not insert " + t_a + "\n";
+            return "can not insert" + t_a + "\n";
         }
     }
     arr[this->numOfsongs++] = newSong;
-    return "success\n";
     return "success\n";
 }
 
@@ -56,7 +56,7 @@ string Playlist::remove(int position)
 {
     if (numOfsongs <= position)
     {
-        return "can not erase " + to_string(position) + "\n";
+        return "can not erase " + to_string(position);
     }
     else
     {

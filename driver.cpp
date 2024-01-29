@@ -27,7 +27,7 @@ int main()
         else if (command == "i")
         {
             string t_a;
-            getline(cin, t_a);
+            getline(cin,t_a);
             cout << myPlaylist.add(t_a);
         }
         else if (command == "p")
