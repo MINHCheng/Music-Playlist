@@ -60,11 +60,12 @@ string Playlist::remove(int position){
         return "can not erase " + to_string(position)+"\n";
     }
     else{
-        int count = position;
-        while(count<((this->numOfsongs)-1)){
-            arr[count] = arr[++count];
+        int count = position+1;
+        while(count<((this->numOfsongs))){
+            arr[position++] = arr[count++];
         }
         arr[(this->numOfsongs)-1].reset();
+        --(this->numOfsongs);
     }
 }
 
