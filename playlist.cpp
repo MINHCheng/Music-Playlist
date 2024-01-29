@@ -75,7 +75,7 @@ string Playlist::remove(int position)
 
 Playlist::~Playlist()
 {
-    delete this->arr;
+    delete[] this->arr;
     this->arr = nullptr;
 }
 

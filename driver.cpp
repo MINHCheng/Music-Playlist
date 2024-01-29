@@ -50,4 +50,5 @@ int main()
             // throw std::invalid_argument("please input a proper command");
         }
     }
+    myPlaylist.~Playlist();
 }
