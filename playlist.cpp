@@ -47,9 +47,8 @@ string Playlist::add(string t_a)
 
 string Playlist::play(int position)
 {
-    int num = position;
     if(position >= this->numOfsongs){
-        return ("can not play "+ to_string(num));
+        return ("can not play "+ to_string(position));
     }
     else{
         return ("played " + to_string(position) + "" + arr[position].name + ";" + arr[position].artist);
