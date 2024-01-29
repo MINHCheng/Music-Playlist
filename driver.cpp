@@ -42,7 +42,7 @@ int main()
             int position;
             cin >> ws;
             cin >> position;
-            cout<<myPlaylist.remove(position);
+            cout<<myPlaylist.remove(position)<<endl;
         }
         else
         {

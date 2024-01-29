@@ -4,9 +4,7 @@
 using namespace std;
 // implement classes' member functions here...
 
-
 ////////////////////        Playlist           //////////////////////
-
 
 Playlist::Playlist()
 {
@@ -28,45 +26,52 @@ string Playlist::add(string t_a)
     if (t_a == "Baby;Justin Beiber" || newSong.name == "My Heart Will Go On" || this->numOfsongs == this->size)
     {
 
-        return "can not insert " + t_a +"\n";
+        return "can not insert " + t_a + "\n";
     }
     for (unsigned int i = 0; i < this->size; i++)
     {
         if (*(this->arr + i) == newSong)
         {
-            return "can not insert " + t_a+"\n";
-        }
-        else
-        {
-            arr[this->numOfsongs++] = newSong;
-            return "success\n";
+            return "can not insert " + t_a + "\n";
         }
     }
+    arr[this->numOfsongs++] = newSong;
+    return "success\n";
     return "success\n";
 }
 
 string Playlist::play(int position)
 {
-    if(position >= this->numOfsongs){
-        return ("can not play "+ to_string(position));
+    if (position >= this->numOfsongs)
+    {
+        return ("can not play " + to_string(position));
     }
-    else{
+    else
+    {
         return ("played " + to_string(position) + "" + arr[position].name + ";" + arr[position].artist);
     }
 }
 
-string Playlist::remove(int position){
-    if(numOfsongs <= position){
-        return "can not erase " + to_string(position)+"\n";
+string Playlist::remove(int position)
+{
+    if (numOfsongs <= position)
+    {
+        return "can not erase " + to_string(position) + "\n";
     }
-    else{
-        int count = position+1;
-        while(count<((this->numOfsongs))){
+    else
+    {
+        int count = position + 1;
+        while (count < ((this->numOfsongs)))
+        {
             arr[position++] = arr[count++];
         }
-        arr[(this->numOfsongs)-1].reset();
+        if (this->numOfsongs > 0)
+        {
+            arr[(this->numOfsongs) - 1].reset();
+        }
         --(this->numOfsongs);
     }
+    return "success";
 }
 
 Playlist::~Playlist()
@@ -75,10 +80,7 @@ Playlist::~Playlist()
     this->arr = nullptr;
 }
 
-
 ////////////////////        Playlist           //////////////////////
-
-
 
 ////////////////////              Songs              /////////////////////////////////
 
@@ -116,10 +118,10 @@ bool Playlist::Songs::operator==(Songs current) const
     return false;
 }
 
-void Playlist::Songs::reset(){
+void Playlist::Songs::reset()
+{
     this->artist = "";
     this->name = "";
 }
-
 
 ////////////////////              Songs              /////////////////////////////////
