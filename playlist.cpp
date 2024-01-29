@@ -23,7 +23,6 @@ string Playlist::make(int size)
 string Playlist::add(string t_a)
 {
     Songs newSong(t_a);
-    Songs Justin("Baby;Justin Beiber");
     if (t_a == " Baby;Justin Beiber"|| (newSong.name == " My Heart Will Go On") || (this->numOfsongs == this->size))
     {
 
