@@ -27,11 +27,11 @@ string Playlist::add(string t_a)
 {
     Songs newSong(t_a);
     // cannot equal Baby by Justin Beiber, MY Heart, and if the number of songs is equal to size then there is no space
-    if (t_a == " Baby;Justin Beiber" || (newSong.name == " My Heart Will Go On") || (this->numOfsongs == this->size))
+    if ((newSong.name == " Baby" && newSong.artist=="Justin Bieber")|| (newSong.name == " My Heart Will Go On") || (this->numOfsongs == this->size))
     {
 
         return "can not insert" + t_a + "\n";
-    }
+    } 
 
     // loops through all songs in array to see if it already added to the playlist
     for (unsigned int i = 0; i < this->size; i++)
