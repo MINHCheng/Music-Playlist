@@ -19,7 +19,7 @@ string Playlist::make(int size)
 {
     this->size = size;
     this->arr = new Songs[size];
-    return "success";
+    return "success\n";
 }
 
 string Playlist::add(string t_a)
@@ -28,36 +28,37 @@ string Playlist::add(string t_a)
     if (t_a == "Baby;Justin Beiber" || newSong.name == "My Heart Will Go On" || this->numOfsongs == this->size)
     {
 
-        return "can not insert " + t_a;
+        return "can not insert " + t_a +"\n";
     }
     for (unsigned int i = 0; i < this->size; i++)
     {
-        if (*(this->arr + 1) == newSong)
+        if (*(this->arr + i) == newSong)
         {
-            return "can not insert " + t_a;
+            return "can not insert " + t_a+"\n";
         }
         else
         {
             arr[this->numOfsongs++] = newSong;
-            return "success";
+            return "success\n";
         }
     }
-    return "success";
+    return "success\n";
 }
 
 string Playlist::play(int position)
 {
-    if(position >= this->size){
-        return "can not play " + position;
+    int num = position;
+    if(position >= this->numOfsongs){
+        return ("can not play "+ to_string(num));
     }
     else{
-        return ("played " + to_string(position) + " " + arr[position].name + ";" + arr[position].artist);
+        return ("played " + to_string(position) + "" + arr[position].name + ";" + arr[position].artist);
     }
 }
 
 string Playlist::remove(int position){
     if(numOfsongs <= position){
-        return "can not erase " + to_string(position);
+        return "can not erase " + to_string(position)+"\n";
     }
     else{
         int count = position;
@@ -101,6 +102,7 @@ Playlist::Songs::Songs(string t_a)
             tempstrng += ch;
         }
     }
+    substring[count++] = tempstrng;
     this->name = substring[0];
     this->artist = substring[1];
 }

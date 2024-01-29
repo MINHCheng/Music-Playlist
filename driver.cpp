@@ -6,6 +6,7 @@
 int main()
 {
     Playlist myPlaylist;
+    bool is_m = true;
     while (true)
     {
         string command;
@@ -15,12 +16,13 @@ int main()
             myPlaylist.~Playlist();
             return 0;
         }
-        else if (command == "m")
+        else if (command == "m"&&is_m)
         {
             int size;
             cin >> ws;
             cin >> size;
             cout << (myPlaylist.make(size));
+            is_m = false;
         }
         else if (command == "i")
         {
@@ -33,18 +35,19 @@ int main()
             int position;
             cin >> ws;
             cin >> position;
-            myPlaylist.play(position);
+            cout<<myPlaylist.play(position)<<endl;
         }
         else if (command == "e")
         {
             int position;
             cin >> ws;
             cin >> position;
-            myPlaylist.remove(position);
+            cout<<myPlaylist.remove(position);
         }
         else
         {
-            throw std::invalid_argument("please input a proper command");
+            cout<<"men\t";
+            // throw std::invalid_argument("please input a proper command");
         }
     }
 }
